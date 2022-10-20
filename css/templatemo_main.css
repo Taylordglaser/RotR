@@ -24,6 +24,8 @@ img {
     vertical-align: middle;
 }
 
+
+
 /* Preloader */
 #preloader {
     position: fixed;
@@ -187,6 +189,64 @@ img.slide {
     padding-bottom: 6%;
 }
 
+.card-grid{
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 1rem;
+    align-items: flex-start;
+}
+
+.card{
+    background-repeat: no-repeat;
+    background-color: white;
+    padding: 1rem;
+    border: 1px solid #777;
+    border-radius: .5rem;
+}
+
+.card-header {
+    font-size: 2.5rem;
+    margin-bottom: .5rem;
+    color: white;
+}
+
+.card-body{
+    font-size: 1.5rem;
+    color: white;
+}
+
+.card-footer {
+    margin-top: 2rem;
+}
+
+.btn {
+    background: hsl(200, 50%, 50%);
+    color: white;
+    border: none;
+    font-size: 2rem;
+    padding: .5em .75em;
+    border-radius: .25em;
+    cursor: pointer;
+}
+
+.btn:hover, .btn:focus{
+    background-color: hsl(200, 50%, 60%);
+}
+
+.btn.btn-outline {
+    background: none;
+    border: 1px solid hsl(200, 50%, 50%);
+    color: hsl(200, 50%, 50%);
+}
+
+.btn.btn-outline:hover, .btn.btn-outline:focus{
+    background-color: hsl(200, 50%, 90%);
+}
+
+.btn + .btn {
+    margin-left: .25rem;
+}
+
 .footer {
     overflow: hidden; 
     position: fixed; 
@@ -205,6 +265,8 @@ img.slide {
 	color: #fff;
 	text-decoration: none;
 }
+
+
 
 @media (max-width: 991px) {
     .footer {
