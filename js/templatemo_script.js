@@ -1,5 +1,3 @@
-/* Credit: http://www.templatemo.com */
-
 var menuDisabled = false;
 
 jQuery(function($) {
@@ -11,9 +9,6 @@ jQuery(function($) {
     });
     
     $(document).ready( function() {
-
-        loadGoogleMap();
-        
         // backstretch for background image
         var defaultImgSrc = $('img.main-img').attr('src');
         $.backstretch(defaultImgSrc, {speed: 500});
@@ -63,10 +58,7 @@ jQuery(function($) {
                     $(name+"-text").show();
                     $(name+"-text").animate({left:'0px'},400,function(){
                         $(this).addClass("active");
-                        
-                        google.maps.event.trigger(map, 'resize'); // resize map
                         $.backstretch("resize"); // resize the background image
-                        
                         menuDisabled = false; // enable the menu
                     });
                 });
@@ -78,22 +70,3 @@ jQuery(function($) {
     });
 
 });
-
-var map = '';
-
-function initialize() {
-    var mapOptions = {
-      zoom: 14,
-      center: new google.maps.LatLng(37.769725, -122.462154)
-    };
-    map = new google.maps.Map(document.getElementById('map-canvas'),  mapOptions);
-}
-
-function loadGoogleMap(){
-    // load google map
-    var script = document.createElement('script');
-    script.type = 'text/javascript';
-    script.src = 'https://maps.googleapis.com/maps/api/js?v=3.exp&sensor=false&' +
-        'callback=initialize';
-    document.body.appendChild(script);
-}
